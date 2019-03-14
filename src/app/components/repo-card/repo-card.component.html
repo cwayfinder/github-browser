@@ -7,7 +7,7 @@
     <p class="card-text text-muted">{{description}}</p>
     <footer>
       <span class="badge" [style.background]="languageColor">{{language}}</span>
-      <a href="#" class="card-link" *ngIf="removable">Remove</a>
+      <button type="button" class="btn btn-link" *ngIf="removable" (click)="remove.next();$event.stopPropagation()">Remove</button>
     </footer>
   </div>
 </div>

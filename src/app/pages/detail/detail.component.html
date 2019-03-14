@@ -1,6 +1,6 @@
 <ng-container *ngIf="(repo$ | async) as repo">
-  <section class="detail" (click)="back()">
-    <span class="back oi oi-chevron-left"></span>
+  <section class="detail">
+    <span class="back oi oi-chevron-left" (click)="back()"></span>
     <div class="wrapper">
       <h2>{{repo.title}}</h2>
       <p class="">{{repo.description}}</p>
@@ -8,7 +8,8 @@
         <span><span class="oi oi-star"></span> {{repo.stars}}</span>
         <span class="badge" [style.background]="repo.languageColor">{{repo.language}}</span>
       </div>
-      <button type="button" class="btn btn-primary">Save Repository</button>
+      <button type="button" class="btn btn-primary" *ngIf="!repo.saved" (click)="save(repo.index)">Save Repository</button>
+      <button type="button" class="btn btn-primary" *ngIf="repo.saved" (click)="remove(repo.index)">Remove Repository</button>
     </div>
   </section>
   <section class="built-by">

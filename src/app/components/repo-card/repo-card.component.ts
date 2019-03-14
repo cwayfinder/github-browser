@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-repo-card',
@@ -13,7 +13,8 @@ export class RepoCardComponent {
   @Input() stars: number;
   @Input() language: string;
   @Input() languageColor: string;
-
   @Input() removable: boolean;
+
+  @Output() remove = new EventEmitter<void>();
 
 }

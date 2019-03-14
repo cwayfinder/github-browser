@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/reducers';
 import { selectSaved } from '../../store/selectors';
+import { removeRepo } from '../../store/actions';
 
 @Component({
   selector: 'app-saved',
@@ -19,4 +20,7 @@ export class SavedComponent implements OnInit {
     this.repos$ = this.store.select(selectSaved);
   }
 
+  remove(index: number) {
+    this.store.dispatch(removeRepo({ index }));
+  }
 }
