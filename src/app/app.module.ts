@@ -8,10 +8,16 @@ import { appReducer } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { TrendingComponent } from './pages/trending/trending.component';
+import { DetailComponent } from './pages/detail/detail.component';
+import { SavedComponent } from './pages/saved/saved.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TrendingComponent,
+    DetailComponent,
+    SavedComponent
   ],
   imports: [
     BrowserModule,
