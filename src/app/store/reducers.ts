@@ -7,20 +7,20 @@ export interface AppState {
 }
 
 export interface ReposState {
-  repos: any[];
+  items: any[];
   loading: boolean;
   saved: number[];
 }
 
 const initialState: ReposState = {
-  repos: [],
+  items: [],
   loading: false,
   saved: [],
 };
 
 export const repoReducers = reducer<ReposState>([
   on(loadRepos, state => ({ ...state, loading: true })),
-  on(loadReposSuccess, (state, { payload: { repos } }) => ({ ...state, repos, loading: false })),
+  on(loadReposSuccess, (state, { payload: { items } }) => ({ ...state, items, loading: false })),
   on(loadReposFail, state => ({ ...state, loading: false })),
 
   on(saveRepo, (state, { payload: { index } }) => ({ ...state, saved: [...state.saved, index] })),

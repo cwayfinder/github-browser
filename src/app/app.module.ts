@@ -13,6 +13,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { SavedComponent } from './pages/saved/saved.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { RepoCardComponent } from './components/repo-card/repo-card.component';
 
 export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>('Registered Reducers');
 
@@ -21,7 +22,8 @@ export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>('Reg
     AppComponent,
     TrendingComponent,
     DetailComponent,
-    SavedComponent
+    SavedComponent,
+    RepoCardComponent
   ],
   imports: [
     BrowserModule,

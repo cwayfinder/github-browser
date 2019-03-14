@@ -14,7 +14,7 @@ export class AppEffects {
   loadRepos$ = this.actions$.pipe(
     ofType(loadRepos),
     switchMap(() => this.http.get<any[]>('https://github-trending-api.now.sh/repositories').pipe(
-      map(repos => loadReposSuccess({repos})),
+      map(items => loadReposSuccess({ items })),
       catchError(response => of(loadReposFail(response))),
     ))
   );

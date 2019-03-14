@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AppState } from '../../store/reducers';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectRepos } from '../../store/selectors';
 
 @Component({
   selector: 'app-trending',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendingComponent implements OnInit {
 
-  constructor() { }
+  repos$: Observable<any[]>;
 
-  ngOnInit() {
+  constructor(private store: Store<AppState>) { }
+
+  ngOnInit(): void {
+    this.repos$ = this.store.select(selectRepos);
   }
 
 }

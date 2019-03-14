@@ -1,6 +1,16 @@
 import { AppState } from './reducers';
 import { createSelector } from '@ngrx/store';
 
-const selectRepos = (state: AppState) => state.repos;
+const selectReposState = (state: AppState) => state.repos;
 
-export const selectSavedCount = createSelector(selectRepos, ({saved}) => saved.length);
+export const selectRepos = createSelector(selectReposState, ({ items }) => {
+  return items.map(({ url, stars, description, language, languageColor }) => ({
+    title: url.replace('https://github.com/', ''),
+    stars,
+    description,
+    language,
+    languageColor
+  }));
+});
+
+export const selectSavedCount = createSelector(selectReposState, ({ saved }) => saved.length);

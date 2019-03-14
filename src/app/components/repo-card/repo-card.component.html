@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    <header>
+      <h5 class="card-title">{{title}}</h5>
+      <span><span class="oi oi-star"></span> {{stars}}</span>
+    </header>
+    <p class="card-text text-muted">{{description}}</p>
+    <footer>
+      <span class="badge" [style.background]="languageColor">{{language}}</span>
+      <a href="#" class="card-link" *ngIf="removable">Remove</a>
+    </footer>
+  </div>
+</div>

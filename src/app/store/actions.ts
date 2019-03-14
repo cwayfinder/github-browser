@@ -1,7 +1,7 @@
 import { action, payload } from 'ts-action';
 
 export const loadRepos = action('Load repos');
-export const loadReposSuccess = action('Load repos success', payload<{ repos: any[] }>());
+export const loadReposSuccess = action('Load repos success', payload<{ items: any[] }>());
 export const loadReposFail = action('Load repos fail', payload<{ error: any }>());
 
 export const saveRepo = action('Save repo', payload<{ index: number }>());
