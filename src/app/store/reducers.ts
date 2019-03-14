@@ -2,19 +2,23 @@ import { reducer } from 'ts-action';
 import { on } from 'ts-action/functions/reducer';
 import { loadRepos, loadReposFail, loadReposSuccess, removeRepo, saveRepo } from './actions';
 
-export interface State {
+export interface AppState {
+  repos: ReposState;
+}
+
+export interface ReposState {
   repos: any[];
   loading: boolean;
   saved: number[];
 }
 
-const initialState: State = {
+const initialState: ReposState = {
   repos: [],
   loading: false,
   saved: [],
 };
 
-export const appReducer = reducer<State>([
+export const repoReducers = reducer<ReposState>([
   on(loadRepos, state => ({ ...state, loading: true })),
   on(loadReposSuccess, (state, { payload: { repos } }) => ({ ...state, repos, loading: false })),
   on(loadReposFail, state => ({ ...state, loading: false })),

@@ -5,9 +5,11 @@ import { SavedComponent } from './pages/saved/saved.component';
 import { DetailComponent } from './pages/detail/detail.component';
 
 const routes: Routes = [
-  { path: '', component: TrendingComponent },
+  { path: 'trending', component: TrendingComponent },
   { path: 'saved', component: SavedComponent },
   { path: 'detail', component: DetailComponent },
+
+  { path: '**', redirectTo: '/trending', pathMatch: 'full' },
 ];
 
 @NgModule({
