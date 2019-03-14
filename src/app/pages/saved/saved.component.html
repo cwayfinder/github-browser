@@ -1,3 +1,9 @@
-<p>
-  saved works!
-</p>
+<h1>Saved Repos</h1>
+
+<app-repo-card *ngFor="let repo of repos$ | async"
+               [title]="repo.title"
+               [description]="repo.description"
+               [language]="repo.language"
+               [languageColor]="repo.languageColor"
+               [stars]="repo.stars"
+               [removable]="true"></app-repo-card>

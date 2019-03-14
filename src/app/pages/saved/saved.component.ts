@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../store/reducers';
+import { selectSaved } from '../../store/selectors';
 
 @Component({
   selector: 'app-saved',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavedComponent implements OnInit {
 
-  constructor() { }
+  repos$: Observable<any[]>;
 
-  ngOnInit() {
+  constructor(private store: Store<AppState>) { }
+
+  ngOnInit(): void {
+    this.repos$ = this.store.select(selectSaved);
   }
 
 }
