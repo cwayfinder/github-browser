@@ -1,9 +1,10 @@
 <h1>Saved Repos</h1>
 
-<app-repo-card *ngFor="let repo of repos$ | async"
+<app-repo-card *ngFor="let repo of repos$ | async; let i = index"
                [title]="repo.title"
                [description]="repo.description"
                [language]="repo.language"
                [languageColor]="repo.languageColor"
                [stars]="repo.stars"
-               [removable]="true"></app-repo-card>
+               [removable]="true"
+               routerLink="../detail/{{i}}"></app-repo-card>

@@ -20,3 +20,13 @@ export const selectSaved = createSelector(selectReposState, ({ items, saved }) =
 });
 
 export const selectSavedCount = createSelector(selectReposState, ({ saved }) => saved.length);
+
+export const selectRepoDetail = createSelector(selectReposState, ({ items }, index) => {
+  console.log(items);
+  if (!items.length) {
+    return;
+  }
+
+  const repo = items[index];
+  return { ...repoProjector(repo), builtBy: repo.builtBy };
+});

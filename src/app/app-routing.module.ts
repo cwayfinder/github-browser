@@ -7,7 +7,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 const routes: Routes = [
   { path: 'trending', component: TrendingComponent },
   { path: 'saved', component: SavedComponent },
-  { path: 'detail', component: DetailComponent },
+  { path: 'detail/:index', component: DetailComponent },
 
   { path: '**', redirectTo: '/trending', pathMatch: 'full' },
 ];

@@ -1,0 +1,54 @@
+.detail {
+  margin: 0 - 16px;
+  display: flex;
+  background: #F5F5F5;
+  padding: 16px 32px;
+
+  .back {
+    margin-top: 10px;
+    font-size: 24px;
+    color: rgba(125, 125, 125, 0.91);
+    cursor: pointer;
+  }
+
+  .wrapper {
+    margin-left: 16px;
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+
+    .badge {
+      margin-left: 20px;
+    }
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+.built-by {
+  padding: 16px;
+
+  .title {
+    text-transform: uppercase;
+    margin: 1em 0;
+  }
+
+  .person {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 16px;
+
+    img {
+      width: 83px;
+    }
+
+    .username {
+      margin-left: 16px;
+      font-size: 24px;
+    }
+  }
+}
