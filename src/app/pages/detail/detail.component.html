@@ -1,5 +1,5 @@
 <ng-container *ngIf="(repo$ | async) as repo">
-  <section class="detail">
+  <section class="detail" (click)="back()">
     <span class="back oi oi-chevron-left"></span>
     <div class="wrapper">
       <h2>{{repo.title}}</h2>

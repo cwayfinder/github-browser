@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../store/reducers';
 import { selectRepoDetail } from '../../store/selectors';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { map, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +16,7 @@ export class DetailComponent implements OnInit {
 
   repo$: Observable<any>;
 
-  constructor(private store: Store<AppState>, private route: ActivatedRoute) { }
+  constructor(private store: Store<AppState>, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     this.repo$ = this.route.params.pipe(
@@ -24,4 +25,7 @@ export class DetailComponent implements OnInit {
     );
   }
 
+  back() {
+    this.location.back();
+  }
 }
