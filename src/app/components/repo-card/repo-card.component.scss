@@ -2,8 +2,20 @@
   display: block;
 }
 
+.card {
+  height: 100%;
+}
+
 header, footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.card-title {
+  word-break: break-word;
+}
+
+.stars {
+  white-space: nowrap;
 }
